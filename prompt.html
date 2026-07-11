@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lead Scoring Prompt (free) — André</title>
+<meta name="description" content="The exact prompt my system uses to score leads 0 to 100 and throw out the bad fits. Paste it into ChatGPT, Claude, or Gemini. Free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{ --green:#1B5E20; --green-d:#14431a; --cream:#FAF7F0; --yellow:#F5C76E; --ink:#171715; --muted:#5d5d55; --line:#e7e2d6; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',-apple-system,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  a{color:var(--green)}
+  .hl{background:linear-gradient(transparent 60%, #F5C76E80 60%);padding:0 .05em}
+  .btn{display:inline-block;background:var(--green);color:#fff;font-weight:700;text-decoration:none;padding:15px 26px;border-radius:12px;font-size:16px;box-shadow:0 6px 18px rgba(27,94,32,.22);transition:transform .08s ease, background .15s ease}
+  .btn:hover{background:var(--green-d);transform:translateY(-1px)}
+  .btn.copy{background:var(--yellow);color:var(--green-d);box-shadow:none;cursor:pointer;border:0}
+  .btn.copy:hover{background:#efbd57}
+  header{padding:60px 0 30px;background:radial-gradient(900px 420px at 50% -10%, #FAF7F0, #fff);text-align:center}
+  .eyebrow{display:inline-block;background:var(--cream);border:1px solid var(--line);color:var(--green);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:7px 14px;border-radius:999px;margin-bottom:18px}
+  h1{font-size:40px;line-height:1.1;font-weight:900;letter-spacing:-.02em;margin-bottom:16px}
+  .sub{font-size:18px;color:var(--muted);max-width:56ch;margin:0 auto}
+  section{padding:34px 0}
+  h2{font-size:24px;font-weight:800;margin-bottom:14px}
+  ol{margin:0 0 0 20px;color:var(--muted);display:grid;gap:8px}
+  ol b{color:var(--ink)}
+  .promptbox{position:relative;background:#12241a;border-radius:16px;padding:22px 20px;margin-top:18px;overflow:auto}
+  .promptbox pre{color:#e8f0e8;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+  .copywrap{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+  .copywrap span{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+  .note{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:20px 22px;color:var(--muted);margin-top:8px}
+  .note b{color:var(--ink)}
+  .up{background:var(--green);color:#fff;border-radius:22px;padding:36px 30px;text-align:center;margin:10px 0}
+  .up h2{color:#fff}
+  .up p{opacity:.9;max-width:52ch;margin:0 auto 20px}
+  .up .btn{background:var(--yellow);color:var(--green-d)}
+  footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:13px}
+  @media(max-width:560px){ header{padding:44px 0 24px} h1{font-size:30px} .sub{font-size:16px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Free · no email required</span>
+    <h1>The prompt that scores your leads <span class="hl">0 to 100.</span></h1>
+    <p class="sub">This is the exact prompt my system uses to rate inbound leads and throw out the bad fits automatically. It looked at 300+ companies and handed me back a short list. Paste it into any AI and use it today.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Use it in 30 seconds</h2>
+    <ol>
+      <li><b>Copy</b> the prompt below into a new chat (ChatGPT, Claude, or Gemini).</li>
+      <li><b>Swap</b> the parts in [BRACKETS] for who you are and who you want to work with.</li>
+      <li><b>Paste one lead</b> (a job post, a company, a profile) and send.</li>
+      <li><b>Read the shortlist,</b> not the heap. It returns a score, a reason, and the angle to pitch.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="copywrap"><span>The prompt</span><button class="btn copy" onclick="copyPrompt()">Copy prompt</button></div>
+    <div class="promptbox">
+<pre id="prompt">You are the prospecting assistant for [WHO YOU ARE: e.g. a freelancer who builds AI and automation for companies, fixed price, fast delivery, fully remote].
+
+A company that posts a role asking for [YOUR BUYING SIGNAL: e.g. AI or automation skills] is a BUYING SIGNAL: they have the pain and they have budget. My angle is to propose doing the work as a service, instead of them hiring in-house.
+
+Follow this DECISION PROCEDURE in order. The moment a rule REJECTS, stop (disqualified = true).
+
+STEP 1 — Company type. REJECT (score &lt;= 15) if the hiring company is:
+- [YOUR HARD-NOs: e.g. IT consultancy / software house / staffing or recruitment agency / big tech with a mature in-house team]
+(Note exceptions, e.g. a marketing agency still counts as a GOOD target.)
+
+STEP 2 — Absolute exclusions. REJECT (score &lt;= 12) if the role is:
+- [YOUR dealbreakers: e.g. internship / trainee, on-site required, a field you do not serve]
+
+STEP 3 — Role type. REJECT (score &lt;= 20) if the role is:
+- product/software engineering for THEIR own team (they want an internal hire, not a service)
+- another profession where your skill is only an incidental requirement
+IMPORTANT EXCEPTION: roles whose actual DELIVERABLE is building automations or integrations for the company's own operations are NOT rejected here, even with "Developer" in the title. Those are exactly your work. Send them to Step 4.
+
+STEP 4 — If it got here, it is a GOOD TARGET (disqualified = false). Score the fit:
+- 85-100: [your bullseye]
+- 65-85: [strong fit]
+- 55-65: [weaker but still plausible]
+
+When unsure between Step 3 and Step 4, FAVOR Step 4.
+
+Write "opportunity" as one short line: they need X -> I solve Y as a service.
+
+Return ONLY this JSON:
+{
+  "fit_score": &lt;integer 0-100&gt;,
+  "opportunity": "&lt;one short line&gt;",
+  "company_type": "&lt;end-company | consultancy | staffing | bigtech | other&gt;",
+  "disqualified": &lt;true|false&gt;,
+  "reason": "&lt;short why&gt;"
+}</pre>
+    </div>
+    <div class="note"><b>Why the ordered gates matter.</b> Most people ask AI to "rate this lead 1 to 10" and get mush. The trick is telling it exactly what to reject first, and why, before it can ever give a high score. A weak fit dies at Step 1, it never gets argued about at Step 4. That is what makes the shortlist trustworthy. Run it at a low temperature so it stays consistent.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="up">
+      <h2>This is one of five steps.</h2>
+      <p>Scoring is the piece that makes it work. But on its own, you still find the leads and write the emails by hand. The full system watches LinkedIn and Indeed, scores with this prompt, finds the decision-maker's email, drafts the message, and drops it in a dashboard for you to approve. I built it with Claude Code, and the blueprint walks you through building your own.</p>
+      <a class="btn" href="blueprint.html">Get the full blueprint · $39</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">André · AI For Business &amp; Builder Files</div>
+</footer>
+
+<script>
+function copyPrompt(){
+  var t = document.getElementById('prompt').innerText;
+  navigator.clipboard.writeText(t).then(function(){
+    var b = document.querySelector('.btn.copy');
+    var old = b.innerText; b.innerText = 'Copied ✓';
+    setTimeout(function(){ b.innerText = old; }, 1800);
+  });
+}
+</script>
+
+</body>
+</html>
