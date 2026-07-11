@@ -4,80 +4,98 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Outreach Machine Blueprint — André</title>
-<meta name="description" content="The exact recipe behind my automated outreach system: the scoring prompt, the cold email prompt, the stack, and the Claude Code steps to build your own. $39, instant download.">
+<meta name="description" content="Copy the exact system that scored 300+ companies and handed me a short list of buyers. The two prompts, the full stack, and the Claude Code build. $39, instant download, money-back.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --green:#1B5E20; --green-d:#14431a; --cream:#FAF7F0; --yellow:#F5C76E;
-    --ink:#171715; --muted:#5d5d55; --line:#e7e2d6; --white:#fff;
-  }
+  :root{ --green:#1B5E20; --green-d:#14431a; --cream:#FAF7F0; --yellow:#F5C76E; --ink:#171715; --muted:#5d5d55; --line:#e7e2d6; }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',-apple-system,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:940px;margin:0 auto;padding:0 22px}
-  .hl{background:linear-gradient(transparent 60%, #F5C76E80 60%);padding:0 .05em}
+  body{font-family:'Inter',-apple-system,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+  .hl{background:linear-gradient(transparent 58%, #F5C76E90 58%);padding:0 .05em}
   a{color:inherit}
   img,svg{max-width:100%;height:auto;display:block}
-  .bar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:11px;padding-bottom:11px}
   .bar b{font-weight:800;font-size:15px}
   .bar .price{color:var(--muted);font-size:13px;font-weight:500}
-  .btn{display:inline-block;background:var(--green);color:#fff;font-weight:700;text-decoration:none;padding:15px 26px;border-radius:12px;font-size:16px;box-shadow:0 6px 18px rgba(27,94,32,.22);transition:transform .08s ease, background .15s ease}
+  .btn{display:inline-block;background:var(--green);color:#fff;font-weight:800;text-decoration:none;padding:16px 28px;border-radius:12px;font-size:16px;box-shadow:0 6px 18px rgba(27,94,32,.22);transition:transform .08s ease, background .15s ease}
   .btn:hover{background:var(--green-d);transform:translateY(-1px)}
   .btn:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
   .btn.sm{padding:10px 18px;font-size:14px;border-radius:10px;box-shadow:none}
-  .btn.big{font-size:18px;padding:18px 36px}
+  .btn.big{font-size:19px;padding:19px 40px}
   .btn.ghost{background:#fff;color:var(--green);border:2px solid var(--green);box-shadow:none}
   .btn.ghost:hover{background:var(--cream)}
   .cta-note{margin-top:12px;font-size:14px;color:var(--muted)}
   .cta-note b{color:var(--ink)}
-  .hero{padding:66px 0 54px;background:radial-gradient(1100px 480px at 50% -10%, #FAF7F0, #fff)}
-  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
-  .eyebrow{display:inline-block;background:var(--cream);border:1px solid var(--line);color:var(--green);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:7px 14px;border-radius:999px;margin-bottom:20px}
-  h1{font-size:46px;line-height:1.07;font-weight:900;letter-spacing:-.02em;margin-bottom:18px}
-  .sub{font-size:19px;color:var(--muted);margin-bottom:26px;max-width:48ch}
-  .hero-art img{border-radius:18px;border:1px solid var(--line)}
-  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--cream)}
-  .trust .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;padding:18px 22px}
-  .trust span{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
-  .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:14px;font-weight:600;color:var(--ink)}
-  section{padding:58px 0;border-top:1px solid var(--line)}
+  .hero{padding:60px 0 50px;background:radial-gradient(1100px 480px at 50% -10%, #FAF7F0, #fff);text-align:center}
+  .eyebrow{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--green);font-weight:800;font-size:13px;letter-spacing:.03em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:22px}
+  h1{font-size:52px;line-height:1.04;font-weight:900;letter-spacing:-.02em;margin:0 auto 20px;max-width:16ch}
+  .sub{font-size:20px;color:var(--muted);margin:0 auto 28px;max-width:60ch}
+  .heroimg{margin:34px auto 0;max-width:720px;border-radius:18px;border:1px solid var(--line);overflow:hidden}
+  .microcopy{margin-top:14px;font-size:13px;color:var(--muted);letter-spacing:.02em}
+  section{padding:56px 0;border-top:1px solid var(--line)}
   #buy{scroll-margin-top:78px}
   .klabel{color:var(--green);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
-  h2{font-size:33px;line-height:1.12;font-weight:900;letter-spacing:-.01em;margin-bottom:18px;max-width:26ch}
+  h2{font-size:34px;line-height:1.12;font-weight:900;letter-spacing:-.01em;margin-bottom:18px;max-width:26ch}
+  .center{text-align:center}
+  .center h2{margin-left:auto;margin-right:auto}
   p.lead{font-size:18px;color:var(--muted);max-width:64ch}
+  .center p.lead{margin-left:auto;margin-right:auto}
   .cream{background:var(--cream)}
-  .stack{list-style:none;display:grid;gap:14px;margin-top:26px;max-width:680px}
-  .stack li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-  .check{flex:none;width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;margin-top:2px}
-  .stack b{font-weight:700}
-  .stack span{color:var(--muted)}
-  .shot{margin-top:28px;border-radius:16px;border:1px solid var(--line);overflow:hidden;max-width:680px}
+  .dark{background:var(--green);color:#fff}
+  .dark .klabel{color:var(--yellow)}
+  .dark p.lead{color:#d6e6d7}
+
+  /* value stack */
+  .vs{max-width:680px;margin:26px auto 0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(23,23,21,.06)}
+  .vrow{display:flex;gap:16px;align-items:flex-start;padding:20px 24px;border-bottom:1px solid var(--line)}
+  .vrow .ck{flex:none;width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;margin-top:2px}
+  .vrow .vt{flex:1}
+  .vrow .vt b{font-weight:800;display:block}
+  .vrow .vt span{color:var(--muted);font-size:15px}
+  .vrow .val{flex:none;font-weight:800;color:var(--muted);white-space:nowrap}
+  .vrow.bonus .ck{background:var(--yellow);color:var(--green-d)}
+  .vrow.bonus .val{color:var(--green)}
+  .vtotal{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;background:var(--cream)}
+  .vtotal .lbl{font-weight:700;color:var(--muted)}
+  .vtotal .num{font-weight:900;font-size:22px}
+  .vtotal .num s{color:#b23a3a;text-decoration-thickness:2px}
+
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
   .col{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}
   .col h3{font-size:18px;margin-bottom:14px}
   .col ul{list-style:none;display:grid;gap:10px}
   .col li{display:flex;gap:10px;color:var(--muted)}
   .col .ic{flex:none;font-weight:800}
-  .for .ic{color:var(--green)}
-  .not .ic{color:#b23a3a}
-  .free{background:#fff;border:2px dashed var(--green);border-radius:18px;padding:30px 30px;max-width:680px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+  .for .ic{color:var(--green)} .not .ic{color:#b23a3a}
+
+  .guar{display:flex;gap:24px;align-items:center;background:#fff;border:2px solid var(--green);border-radius:20px;padding:30px 34px;max-width:760px;margin:0 auto}
+  .guar .seal{flex:none}
+  .guar h3{font-size:22px;margin-bottom:6px}
+  .guar p{color:var(--muted)}
+
+  .free{background:#fff;border:2px dashed var(--green);border-radius:18px;padding:28px 30px;max-width:680px;margin:0 auto;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
   .free .t{flex:1;min-width:230px}
   .free h3{font-size:20px;margin-bottom:6px}
   .free p{color:var(--muted);font-size:15px}
-  .offer{background:var(--green);color:#fff;border-radius:26px;padding:48px 38px;text-align:center;max-width:660px;margin:0 auto;box-shadow:0 22px 54px rgba(27,94,32,.26)}
+
+  .offer{background:var(--green);color:#fff;border-radius:26px;padding:46px 38px;text-align:center;max-width:660px;margin:0 auto;box-shadow:0 22px 54px rgba(27,94,32,.26)}
   .offer .name{font-weight:700;opacity:.85;letter-spacing:.05em;text-transform:uppercase;font-size:13px}
-  .offer .pr{font-size:62px;font-weight:900;line-height:1;margin:12px 0 2px}
-  .offer .anchor{opacity:.85;font-size:15px;margin-bottom:22px}
+  .offer .anchorline{opacity:.8;font-size:15px;margin:14px 0 2px}
+  .offer .anchorline s{opacity:.8}
+  .offer .pr{font-size:66px;font-weight:900;line-height:1;margin:2px 0 4px}
+  .offer .anchor{opacity:.85;font-size:15px;margin-bottom:22px;max-width:44ch;margin-left:auto;margin-right:auto}
   .offer .btn{background:var(--yellow);color:var(--green-d)}
   .offer .btn:hover{background:#efbd57}
-  .oncall{list-style:none;display:grid;gap:8px;max-width:400px;margin:24px auto 0;text-align:left}
+  .oncall{list-style:none;display:grid;gap:8px;max-width:400px;margin:22px auto 0;text-align:left}
   .oncall li{display:flex;gap:10px;font-size:14px;opacity:.95}
   .oncall .d{flex:none;color:var(--yellow);font-weight:800}
+
   .about{max-width:660px}
-  .faq{display:grid;gap:12px;margin-top:24px;max-width:760px}
+  .faq{display:grid;gap:12px;margin-top:24px;max-width:760px;margin-left:auto;margin-right:auto}
   details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px}
   details[open]{border-color:var(--green)}
   summary{font-weight:700;cursor:pointer;list-style:none;font-size:17px}
@@ -86,12 +104,12 @@
   .final{text-align:center}
   .final h2{margin:0 auto 22px}
   footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:13px}
-  @media(max-width:820px){ .hero .wrap{grid-template-columns:1fr;gap:30px} .hero-art{order:-1;max-width:460px;margin:0 auto} h1{font-size:40px} }
   @media(max-width:560px){
-    .wrap{padding:0 18px} .hero{padding:44px 0 40px} section{padding:44px 0}
-    h1{font-size:31px} h2{font-size:25px} .sub{font-size:17px} p.lead{font-size:16px}
+    .wrap{padding:0 18px} .hero{padding:44px 0 38px} section{padding:44px 0}
+    h1{font-size:34px} h2{font-size:26px} .sub{font-size:17px} p.lead{font-size:16px}
     .cols{grid-template-columns:1fr} .btn.big{display:block;width:100%;text-align:center}
-    .bar .price{display:none} .offer{padding:36px 22px;border-radius:20px} .offer .pr{font-size:50px}
+    .bar .price{display:none} .offer{padding:36px 22px;border-radius:20px} .offer .pr{font-size:54px}
+    .vrow{padding:16px 18px} .guar{flex-direction:column;text-align:center;padding:26px 22px}
   }
 </style>
 </head>
@@ -102,65 +120,104 @@
 <div class="bar">
   <div class="wrap">
     <b>The Outreach Machine Blueprint</b>
-    <span class="price">$39 · instant download</span>
-    <a class="btn sm" href="https://KIT-CHECKOUT-URL-HERE">Get the blueprint</a>
+    <span class="price">$925 value · yours for $39</span>
+    <a class="btn sm" href="https://KIT-CHECKOUT-URL-HERE">Get it now</a>
   </div>
 </div>
 
 <header class="hero">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">Built with Claude Code</span>
-      <h1>The machine that finds my clients, <span class="hl">handed to you.</span></h1>
-      <p class="sub">The exact recipe behind my automated outreach: the scoring prompt that kills bad leads, the cold email prompt, the full stack, and the Claude Code steps to build your own. Even if you don't code.</p>
-      <a class="btn big" href="https://KIT-CHECKOUT-URL-HERE">Get the blueprint · $39</a>
-      <div class="cta-note">Instant download. The two prompts alone are worth the price.</div>
-    </div>
-    <div class="hero-art">
-      <img src="https://aandr3.github.io/ai-working-session/img/outreach-flow.png" alt="The five-step outreach pipeline: watch, score, hunt, write, approve">
-    </div>
+    <span class="eyebrow">Built with Claude Code · no coding needed</span>
+    <h1>Copy the machine that finds my clients <span class="hl">while I sleep.</span></h1>
+    <p class="sub">It looked at 300+ companies, threw out the junk on its own, and handed me a short list of real buyers with the email already found and the outreach already written. Here is the exact build, prompts and all, so you can point one at your own market this weekend.</p>
+    <a class="btn big" href="https://KIT-CHECKOUT-URL-HERE">Get the blueprint · $39</a>
+    <div class="microcopy">Instant download · money-back guarantee · both prompts included</div>
+    <div class="heroimg"><img src="https://aandr3.github.io/ai-working-session/img/outreach-flow.png" alt="The five-step outreach pipeline: watch, score, hunt, write, approve"></div>
   </div>
 </header>
 
-<div class="trust">
-  <div class="wrap">
-    <span>The real stack</span>
-    <span class="pill">Claude Code</span>
-    <span class="pill">Apify</span>
-    <span class="pill">Gemini</span>
-    <span class="pill">Hunter.io</span>
-    <span class="pill">Supabase</span>
-  </div>
-</div>
+<div class="cream"><div class="wrap" style="padding:20px 22px;text-align:center;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.06em;font-weight:600">The real stack &nbsp;·&nbsp; Claude Code &nbsp;·&nbsp; Apify &nbsp;·&nbsp; Gemini &nbsp;·&nbsp; Hunter.io &nbsp;·&nbsp; Supabase</div></div>
 
 <section>
   <div class="wrap">
-    <div class="klabel">The honest problem</div>
-    <h2>Prospecting is the worst kind of work.</h2>
-    <p class="lead">Important, repetitive, and easy to keep putting off. So you either grind through it by hand, or you blast a template to a thousand people and get ignored. There is a third way. Let a machine do the finding, scoring, and drafting, and keep yourself for the one part that needs a human. The yes or no.</p>
+    <div class="klabel">Let's be honest</div>
+    <h2>Right now, outreach costs you the thing you can't get back.</h2>
+    <p class="lead">Every week you either grind through prospecting by hand, opening tabs, judging fits, hunting emails, writing notes one at a time, or you blast a template to a thousand people and get ignored. Both are a tax on your time. And the leads you never got to are the deals you never closed. A machine can carry the whole boring 90 percent. You just say yes or no.</p>
   </div>
 </section>
 
-<section class="cream">
+<section class="cream center">
   <div class="wrap">
-    <div class="klabel">What's inside</div>
-    <h2>The whole recipe, nothing held back.</h2>
-    <ul class="stack">
-      <li><span class="check">✓</span><div><b>The lead scoring prompt.</b> <span>The four-gate decision procedure that rates every lead 0 to 100 and kills the bad fits automatically. Copy-paste ready.</span></div></li>
-      <li><span class="check">✓</span><div><b>The cold email prompt.</b> <span>Writes a tailored first draft that names their real need and never reads like a template.</span></div></li>
-      <li><span class="check">✓</span><div><b>The full architecture.</b> <span>All five steps, the real tool behind each one, and why. Plus a cost table so there are no surprises.</span></div></li>
-      <li><span class="check">✓</span><div><b>Build it with Claude Code.</b> <span>The seven exact prompts, in order, to scaffold the whole thing. Watch, score, hunt, write, dashboard, cron.</span></div></li>
-      <li><span class="check">✓</span><div><b>Make it yours.</b> <span>How to rewrite the scoring brain for your own business and your own buying signal.</span></div></li>
-    </ul>
+    <div class="klabel">Here's everything you get</div>
+    <h2>The entire system, nothing held back.</h2>
+    <p class="lead">Not an overview. The actual prompts I run, the actual stack, and the actual steps to build it.</p>
+    <div class="vs">
+      <div class="vrow">
+        <span class="ck">✓</span>
+        <div class="vt"><b>The Lead Scoring Prompt</b><span>The four-gate decision engine that rates every lead 0 to 100 and kills bad fits before they waste your time. Tuned across 300+ real companies.</span></div>
+        <div class="val">$299</div>
+      </div>
+      <div class="vrow">
+        <span class="ck">✓</span>
+        <div class="vt"><b>The Cold Email Prompt</b><span>Writes a tailored first draft that names their real need and never reads like a template. Copy-paste ready.</span></div>
+        <div class="val">$149</div>
+      </div>
+      <div class="vrow">
+        <span class="ck">✓</span>
+        <div class="vt"><b>The Full Architecture + Cost Map</b><span>All five steps, the exact tool behind each, and what it costs to run. No guessing, no surprise bills.</span></div>
+        <div class="val">$99</div>
+      </div>
+      <div class="vrow">
+        <span class="ck">✓</span>
+        <div class="vt"><b>The 7 Claude Code Build Prompts</b><span>The exact prompts, in order, that scaffold the whole machine. Watch, score, hunt, write, dashboard, cron. Saves you a weekend of trial and error.</span></div>
+        <div class="val">$299</div>
+      </div>
+      <div class="vrow">
+        <span class="ck">✓</span>
+        <div class="vt"><b>The Make-It-Yours ICP Guide</b><span>How to rewrite the scoring brain for your business and your buying signal, so it judges leads the way you would.</span></div>
+        <div class="val">$79</div>
+      </div>
+      <div class="vrow bonus">
+        <span class="ck">★</span>
+        <div class="vt"><b>Bonus: my Portuguese originals</b><span>The raw prompts exactly as I run them, in case you want the unedited version.</span></div>
+        <div class="val">Free</div>
+      </div>
+      <div class="vtotal">
+        <span class="lbl">Total value</span>
+        <span class="num"><s>$925</s> &nbsp; today $39</span>
+      </div>
+    </div>
+    <div style="margin-top:26px"><a class="btn big" href="https://KIT-CHECKOUT-URL-HERE">Get all of it · $39</a></div>
   </div>
 </section>
 
 <section>
-  <div class="wrap">
+  <div class="wrap center">
     <div class="klabel">The idea in one picture</div>
     <h2>Hundreds in. A handful out.</h2>
-    <p class="lead">The scoring step is the quiet unlock. It lets a machine make the "is this worth my time" call for you, one company at a time. That is what turns a pile of noise into a short list you can trust.</p>
-    <div class="shot"><img src="https://aandr3.github.io/ai-working-session/img/outreach-funnel.png" alt="Hundreds of companies funnel in, only a few come out worth sending"></div>
+    <p class="lead">The scoring step is the quiet unlock. It lets a machine make the "is this worth my time" call for you, one company at a time, so you only ever look at the good ones.</p>
+    <div class="heroimg"><img src="https://aandr3.github.io/ai-working-session/img/outreach-funnel.png" alt="Hundreds of companies funnel in, only a few come out worth sending"></div>
+  </div>
+</section>
+
+<section class="dark center">
+  <div class="wrap">
+    <div class="klabel">Do the math</div>
+    <h2>One reply pays for this many times over.</h2>
+    <p class="lead">This is thirty-nine dollars. Land a single client from a machine that runs on its own, and the blueprint has paid for itself and every tool it uses for a year. The only real cost is another month of doing it all by hand.</p>
+    <div style="margin-top:26px"><a class="btn big" href="https://KIT-CHECKOUT-URL-HERE">Get the blueprint · $39</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="display:flex;justify-content:center">
+    <div class="guar">
+      <span class="seal" aria-hidden="true"><svg width="66" height="66" viewBox="0 0 64 64"><path d="M32 5 L55 14 V31 C55 45 45 55 32 59 C19 55 9 45 9 31 V14 Z" fill="#FAF7F0" stroke="#1B5E20" stroke-width="3"/><path d="M21 32 l7 7 l15 -17" fill="none" stroke="#1B5E20" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div>
+        <h3>Try it. If it doesn't earn its keep, I'll refund you.</h3>
+        <p>Read it, run the prompts, start the build. If the system isn't worth far more than you paid, email me within 30 days and I'll refund every cent. Keep the blueprint anyway. The risk is mine.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -181,7 +238,7 @@
         <h3>This is not for you if</h3>
         <ul>
           <li><span class="ic">✕</span> You want a one-click app with nothing to set up</li>
-          <li><span class="ic">✕</span> You're looking for a done-for-you service (that's my session)</li>
+          <li><span class="ic">✕</span> You want it built for you (that's my session, link below)</li>
           <li><span class="ic">✕</span> You won't touch a single account or prompt</li>
         </ul>
       </div>
@@ -193,7 +250,7 @@
   <div class="wrap" style="display:flex;justify-content:center">
     <div class="free">
       <div class="t">
-        <h3>Want a taste first? Take the scoring prompt, free.</h3>
+        <h3>Not ready? Take the scoring prompt, free.</h3>
         <p>It's the "aha" piece and it works on its own. Paste it into ChatGPT, Claude, or Gemini and score your own leads today. No email required.</p>
       </div>
       <a class="btn ghost" href="prompt.html">Get the free prompt</a>
@@ -205,13 +262,14 @@
   <div class="wrap">
     <div class="offer">
       <div class="name">The Outreach Machine Blueprint</div>
+      <div class="anchorline"><s>$925 value</s></div>
       <div class="pr">$39</div>
-      <div class="anchor">The two prompts, the stack, and the Claude Code build. One afternoon to your own machine.</div>
-      <a class="btn big" href="https://KIT-CHECKOUT-URL-HERE">Get the blueprint</a>
+      <div class="anchor">The two prompts, the full stack, and the Claude Code build. One afternoon to your own machine.</div>
+      <a class="btn big" href="https://KIT-CHECKOUT-URL-HERE">Get instant access</a>
       <ul class="oncall">
-        <li><span class="d">→</span> Instant download, yours to keep</li>
-        <li><span class="d">→</span> Both prompts in English, my Portuguese originals as a bonus</li>
-        <li><span class="d">→</span> The exact Claude Code steps, no coding background needed</li>
+        <li><span class="d">→</span> Instant download, yours to keep forever</li>
+        <li><span class="d">→</span> 30-day money-back guarantee, keep it either way</li>
+        <li><span class="d">→</span> No coding background needed, Claude Code does the typing</li>
       </ul>
     </div>
   </div>
@@ -221,20 +279,21 @@
   <div class="wrap about">
     <div class="klabel">Who made this</div>
     <h2>Hey, I'm André.</h2>
-    <p class="lead">I build AI automations and write two newsletters, AI For Business and Builder Files. This is the real system I use to find my own clients, the same one I walked through with my readers. Not a theory. The actual prompts and the actual build.</p>
+    <p class="lead">I build AI automations and write two newsletters, AI For Business and Builder Files. This is the real system I use to find my own clients, the same one I walked my readers through. Not theory. The actual prompts and the actual build.</p>
   </div>
 </section>
 
 <section class="cream">
   <div class="wrap">
     <div class="klabel">Questions</div>
-    <h2>The honest answers.</h2>
+    <h2 style="margin:0 auto 18px;text-align:center">The honest answers.</h2>
     <div class="faq">
-      <details><summary>Do I need to know how to code?</summary><p>No. The build section is a sequence of plain-English prompts you give Claude Code, one at a time. It writes the code, you run it. That is the whole point.</p></details>
-      <details><summary>What exactly do I get?</summary><p>A document with the two prompts (scoring and cold email), the full architecture and cost table, the seven Claude Code build steps, and a guide to adapting it to your business. Instant download.</p></details>
-      <details><summary>Will the prompts work for my business?</summary><p>The engine is generic, the scoring brain is yours to rewrite. The blueprint shows you exactly how to swap in your own ideal client and buying signal.</p></details>
-      <details><summary>Is this just the free prompt padded out?</summary><p>No. The free prompt is one of five steps. The blueprint is the whole pipeline: sourcing, enrichment, drafting, the dashboard, and the build.</p></details>
+      <details><summary>Do I need to know how to code?</summary><p>No. The build is a sequence of plain-English prompts you give Claude Code, one at a time. It writes the code, you run it. That is the whole point.</p></details>
+      <details><summary>What exactly do I get?</summary><p>A document with the two prompts (scoring and cold email), the full architecture and cost table, the seven Claude Code build steps, and the guide to adapting it to your business. Instant download.</p></details>
+      <details><summary>Will it work for my business?</summary><p>The engine is generic, the scoring brain is yours to rewrite. The blueprint shows you exactly how to swap in your own ideal client and buying signal.</p></details>
+      <details><summary>Isn't this just the free prompt padded out?</summary><p>No. The free prompt is one of five steps. The blueprint is the whole pipeline: sourcing, enrichment, drafting, the dashboard, and the build.</p></details>
       <details><summary>What if I want you to build it with me?</summary><p>That's my 4-hour working session. The blueprint is the do-it-yourself version. Start here, upgrade any time.</p></details>
+      <details><summary>What if it's not for me?</summary><p>Email me within 30 days for a full refund, and keep the blueprint. You carry zero risk here.</p></details>
     </div>
   </div>
 </section>
@@ -242,9 +301,9 @@
 <section class="final">
   <div class="wrap">
     <h2>Stop prospecting by hand.</h2>
-    <p class="lead" style="margin:0 auto 26px">Get the exact recipe, build your own machine, and keep yourself for the yes or no.</p>
+    <p class="lead" style="margin:0 auto 26px">Get the exact recipe, point a machine at your market, and keep yourself for the one part that needs a human. The yes or no.</p>
     <a class="btn big" href="https://KIT-CHECKOUT-URL-HERE">Get the blueprint · $39</a>
-    <div class="cta-note">Instant download · both prompts included · build it with Claude Code</div>
+    <div class="cta-note">Instant download · 30-day money-back · build it with Claude Code</div>
   </div>
 </section>
 
